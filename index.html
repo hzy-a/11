@@ -16,8 +16,28 @@
     <div class="modal__name">hzy</div>
     <div class="modal__intro">(σ≧︎▽︎≦︎)σ。</div>
     <div class="modal_tech">
-      欢迎进来访问的小伙伴，这是我的一个引导页
-      技术栈：HTML CSS JS jquery bootstrap axios Nodejs Vue React Astro nuxt.js threejs
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>调用一言接口</title>
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+	<h1>调用一言接口</h1>
+	<p id="hitokoto"></p>
+
+	<script>
+		axios.get("https://v1.hitokoto.cn/")
+		  .then(response => {
+		    document.getElementById("hitokoto").innerHTML = response.data.hitokoto;
+		  })
+		  .catch(error => {
+		    console.error(error);
+		  });
+	</script>
+</body>
+</html>
     </div>
     <div class="button_group">
       <a href="https://bk.hhzyi.com" class="modal__button">进入博客</a>
